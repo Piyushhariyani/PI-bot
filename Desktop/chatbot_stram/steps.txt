@@ -1,0 +1,69 @@
+Agenda : Chatbot Creation and deploy on AWS  
+
+step-1 : We will create virtual environment 
+
+uv venv 
+
+step-2 : We will activate this virtual environment 
+
+.venv\Scripts\activate 
+
+step-3 : We will create requirements.txt file for store our all packages which
+is important for creation this bot .
+
+streamlit ---> for ui 
+
+python-dotenv ---> for load our secret credentials to main file 
+
+google-generativeai ---> this is CLIENT SDK  
+
+
+step-4 : We will install all the packages using this command 
+
+uv add -r requirements.txt 
+
+step-5 : We will create .env file for storing our secret credentials. 
+
+step-6 : We will create app.py for creating our chatbot . 
+
+
+function create(model+api_key) <----> user query
+
+
+step-7 : Push our repo to github . 
+
+git init
+
+git add .
+git commit -m "first commit"
+
+git branch -M main
+
+git remote add origin https://github.com/github_username/repo_name.git
+
+git push -u origin main
+
+
+step-8 :: Deploy your chatbot on AWS 
+
+(a). We will create EC2 Instance . 
+
+(b). We will open cli 
+
+sudo  apt-get update 
+
+sudo apt-get install docker.io -y 
+
+sudo usermod -aG docker $USER  && newgrp docker 
+
+
+(c). Now we will clone our github repository 
+
+git clone https://github.com/1602saurab/chatbot_stream.git
+
+
+(d). Now we will create Docker Image 
+
+docker build -t <docker_image_name> . 
+
+docker run -d -p 8501:8501 --env-file .env query_bot_app:latest
