@@ -1,0 +1,16 @@
+[project]
+name = "predec"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "google-generativeai>=0.8.6",
+    "langchain>=1.2.12",
+    "langchain-classic>=1.0.2",
+    "langchain-community>=0.4.1",
+    "langchain-core>=1.2.18",
+    "langchain-google-genai>=4.2.1",
+    "python-dotenv>=1.2.2",
+    "streamlit>=1.55.0",
+]
